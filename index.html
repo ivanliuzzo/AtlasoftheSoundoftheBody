@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas of the Sound of the Body</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --ink:#111111; --grey:#8a8a8a; --line:#e2e2e2;
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"Familjen Grotesk",system-ui,sans-serif;
+  --mono:"Space Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:12px;line-height:1.55}
+.wrap{max-width:840px;margin:0 auto;padding:24px 24px 54px}
+.mast{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:9px}
+h1{font-family:var(--serif);font-weight:500;font-size:23px;letter-spacing:-.01em;line-height:1.05;margin:22px 0 7px}
+.sub{font-family:var(--serif);font-size:12.5px;max-width:54ch;margin-bottom:16px}.sub b{font-weight:600}
+.lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:6px;margin:28px 0 12px}
+.todo{font-family:var(--serif);font-size:12.5px;max-width:60ch}
+.todo p{padding:6px 0;border-bottom:1px solid var(--line)}.todo b{font-weight:600}
+.todo .free{border:none;color:var(--grey);font-size:11.5px;padding-top:10px}
+.tag{font-family:var(--mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.grid{display:grid;background:var(--bg)}
+.hair{gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.hair>*{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sounds{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.snd{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:8px;padding:7px 10px}
+.snd .sc{font-family:var(--mono);font-weight:700;font-size:11px}
+.snd audio{width:100%;height:26px;filter:grayscale(1)}
+.snd .dl{font-family:var(--mono);font-size:10px;color:var(--ink);text-decoration:none}
+.snd .dl:hover{color:var(--grey)}
+.mgrid{grid-template-columns:repeat(auto-fill,minmax(148px,1fr))}
+.m{font-family:var(--sans);padding:14px 12px 12px;min-height:96px;display:flex;flex-direction:column;justify-content:space-between}
+.m .k{font-family:var(--sans);font-weight:600;font-size:32px;line-height:.8}
+.m .nm{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-top:12px}
+.m .hint{font-family:var(--sans);font-size:9.5px;color:var(--grey);margin-top:4px;line-height:1.35}
+.core{grid-template-columns:1fr 1fr;gap:1px}
+.core .m{background:var(--ink);color:var(--bg);min-height:118px}
+.core .m .k{font-size:42px}.core .m .hint{color:#bdbdbd}
+.ret{font-family:var(--serif);font-size:12px}
+.ret dl{display:grid;grid-template-columns:104px 1fr;gap:8px 16px;margin-top:6px}
+.ret dt{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--grey);padding-top:2px}
+.ret dd{padding-bottom:4px}
+.code{font-family:var(--mono);font-weight:700;border:1px solid var(--ink);padding:1px 5px;font-size:11px}
+.mono{font-family:var(--mono)}a{color:var(--ink)}
+@media(max-width:520px){.wrap{padding:20px 14px 46px}.core{grid-template-columns:1fr}h1{font-size:21px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="mast"><span>Ivan Liuzzo — IDCE HGK FHNW</span><span>Atlas · participant brief</span></div>
+  <h1>Atlas of the Sound of the Body</h1>
+  <p class="sub"><b>From sound to sign.</b> You translate a body sound into a visible form, through the methods below.</p>
+  <div class="lab"><span>What to do</span></div>
+  <div class="todo">
+    <p>Choose <b>at least one</b> sound from the set below — or more.</p>
+    <p>Translate it with the <b>core methods</b>: a drawing <span class="tag">A</span> or/and a digital artifact <span class="tag">B</span>.</p>
+    <p>Then, if you want, add any of the <b>additional methods</b> — free choice.</p>
+    <p class="free">Format is free — paper, scale, material, all up to you.</p>
+  </div>
+  <div class="lab"><span>The sounds</span><span>S01 — S17</span></div>
+  <div class="grid hair sounds" id="sounds"></div>
+  <div class="lab"><span>Core methods</span><span>one or both</span></div>
+  <div class="grid core">
+    <div class="m"><div class="k">A</div><div><div class="nm">Drawing</div><div class="hint">By hand. Ink, charcoal, colour, or open — any medium on paper.</div></div></div>
+    <div class="m"><div class="k">B</div><div><div class="nm">Digital artifact</div><div class="hint">On screen. Any software, any tool.</div></div></div>
+  </div>
+  <div class="lab"><span>Additional methods</span><span>optional — choose any</span></div>
+  <div class="grid hair mgrid">
+    <div class="m"><div class="k">C</div><div><div class="nm">Photography</div><div class="hint">Analog. An abstract photograph in response to the sound.</div></div></div>
+    <div class="m"><div class="k">D</div><div><div class="nm">Sculpture</div><div class="hint">A small object from a single material.</div></div></div>
+    <div class="m"><div class="k">E</div><div><div class="nm">The body</div><div class="hint">Photograph a body where the sound seems to come from.</div></div></div>
+  </div>
+  <div class="lab"><span>Extra</span><span>optional</span></div>
+  <div class="grid hair mgrid">
+    <div class="m"><div class="k">F</div><div><div class="nm">Video</div><div class="hint">30 seconds to 2 minutes.</div></div></div>
+    <div class="m"><div class="k">G</div><div><div class="nm">3D</div><div class="hint">A 3D model of anything the sound suggests.</div></div></div>
+  </div>
+  <div class="lab"><span>Returning your work</span><span>how &amp; where</span></div>
+  <div class="ret">
+    <dl>
+      <dt>Name it</dt><dd>Sound code + method letter. A drawing of S03 becomes <span class="code">S03_A</span>. Add your name.</dd>
+      <dt>Physical</dt><dd>Drawings, sculptures, prints — drop them in the labelled container for that method.</dd>
+      <dt>Digital</dt><dd>Digital work, photographs and video — upload into the <a href="https://drive.google.com/drive/folders/1zCbKnsRNjWnR49SYjtUjmfuFvEy1I8EQ?usp=drive_link">UPLOAD_ folder</a>, or send via <a href="https://www.swisstransfer.com">Swisstransfer</a> / email to <a href="mailto:ivan.liuzzo.contact@gmail.com">ivan.liuzzo.contact@gmail.com</a>.</dd>
+      <dt>Resolution</dt><dd>Photographs &amp; video: highest quality. Scans of physical works: <span class="mono">600–1200 dpi</span>.</dd>
+    </dl>
+  </div>
+</div>
+<script>
+var host=document.getElementById('sounds');
+for(var i=1;i<=17;i++){var n=(i<10?'0':'')+i,s='S'+n;var d=document.createElement('div');d.className='snd';
+d.innerHTML='<span class="sc">'+s+'</span><audio controls preload="none" src="sounds/'+s+'.mp3"></audio><a class="dl" href="sounds/'+s+'.mp3" download>&darr;</a>';host.appendChild(d);}
+</script>
+</body>
+</html>
